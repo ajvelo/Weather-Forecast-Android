@@ -1,7 +1,8 @@
-package com.andreasvelounias.weatherforecast
+package com.andreasvelounias.weatherforecast.UI
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.andreasvelounias.weatherforecast.R
 
 class MainActivity : AppCompatActivity() {
 
