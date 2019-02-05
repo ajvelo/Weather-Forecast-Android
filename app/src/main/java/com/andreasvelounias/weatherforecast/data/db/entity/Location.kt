@@ -1,4 +1,4 @@
-package com.andreasvelounias.weatherforecast.data
+package com.andreasvelounias.weatherforecast.data.db.entity
 
 import com.google.gson.annotations.SerializedName
 
