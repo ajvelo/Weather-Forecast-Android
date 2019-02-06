@@ -10,6 +10,8 @@ import androidx.lifecycle.Observer
 
 import com.andreasvelounias.weatherforecast.R
 import com.andreasvelounias.weatherforecast.UI.base.ScopedFragment
+import com.andreasvelounias.weatherforecast.internal.glide.GlideApp
+import com.bumptech.glide.load.engine.DiskCacheStrategy
 import kotlinx.android.synthetic.main.current_weather_fragment.*
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
@@ -55,6 +57,10 @@ class CurrentWeatherFragment : ScopedFragment(), KodeinAware {
             updatePrecipitation(it.precipitationVolume)
             updateWind(it.windDirection, it.windSpeed)
             updateVisibility(it.visibilityDistance)
+
+            GlideApp.with(this@CurrentWeatherFragment)
+                .load("https:${it.conditionIconUrl}")
+                .into(imageView_condition_icon)
         })
     }
 
