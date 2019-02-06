@@ -47,7 +47,14 @@ class CurrentWeatherFragment : ScopedFragment(), KodeinAware {
 
             group_loading.visibility = View.GONE
             updateLocation("Los Angeles")
+
+            // Update UI
             updateDateToToday()
+            updateTemperatures(it.temperature, it.feelsLikeTemperature)
+            updateCondition(it.conditionText)
+            updatePrecipitation(it.precipitationVolume)
+            updateWind(it.windDirection, it.windSpeed)
+            updateVisibility(it.visibilityDistance)
         })
     }
 
