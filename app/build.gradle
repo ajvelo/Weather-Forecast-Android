@@ -4,14 +4,14 @@ apply plugin: 'kotlin-android'
 
 apply plugin: 'kotlin-android-extensions'
 
-apply plugin: 'kotlin-kapt'
+apply plugin: "kotlin-kapt"
 
 apply plugin: 'androidx.navigation.safeargs'
 
 android {
     compileSdkVersion 28
     defaultConfig {
-        applicationId "com.andreasvelounias.weatherforecast"
+        applicationId "com.resocoder.forecastmvvm"
         minSdkVersion 21
         targetSdkVersion 28
         versionCode 1
@@ -26,10 +26,14 @@ android {
     }
 }
 
+androidExtensions {
+    experimental = true
+}
+
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-    implementation 'androidx.appcompat:appcompat:1.1.0-alpha01'
+    implementation 'androidx.appcompat:appcompat:1.0.0'
 
     // Navigation
     implementation "android.arch.navigation:navigation-fragment:$navigation_version"
